@@ -1,0 +1,19 @@
+/*
+    Динамический массив
+    List<T>
+*/
+using System.Collections.Generic;
+// T - тип данных
+
+List<int> numbers = new List<int>() { 1 };
+
+numbers.Add(5); // Добавление в конец списка
+numbers.Remove(2);
+numbers.Insert(1, 10);
+
+for (int i = 0; i < numbers.Count; i++)
+    Console.WriteLine(numbers[i]);
+
+https://learn.microsoft.com/ru-ru/dotnet/api/system.collections.generic.list-1?view=net-8.0
+https://metanit.com/sharp/tutorial/4.5.php
+https://github.com/microsoft/referencesource/blob/master/mscorlib/system/collections/generic/list.cs

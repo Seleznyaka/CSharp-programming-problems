@@ -1,0 +1,26 @@
+using System.IO;
+string[] read = File.ReadAllText(@"C:\Users\SAA\Desktop\user_data.txt").Split("\n"); // здесь свой путь к файлу
+int[] elves = new int[300];
+int k = 0;
+int sum = 0;
+for (int i = 0; i < read.Length; i++)
+{
+    if (read[i] != "\r")
+    {
+        sum = sum + Convert.ToInt32(read[i]);
+
+    }
+    else
+    {
+        elves[k] = sum;
+        k++;
+        sum = 0;
+    }
+}
+Array.Sort(elves); // сортировка массива с эльфами
+for (int i = 0; i < elves.Length; i++)
+{
+    Console.WriteLine($"У {i} эльфа находится {elves[i]} каллорий");
+}
+int result = elves[297] + elves[298] + elves[299]; // складываем три последних
+Console.WriteLine(result);
